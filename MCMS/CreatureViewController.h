@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MagicalCreature.h"
 
 @interface CreatureViewController : UIViewController
+@property MagicalCreature *creature;
+@property NSIndexPath *indexPath;
+@property NSMutableArray *myCreatures;
 
 @end
