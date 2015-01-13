@@ -11,10 +11,22 @@
 
 @implementation MagicalCreature
 
--(instancetype)initWithCreature:(NSString *)name {
+-(instancetype)initWithName:(NSString *)name {
     self = [super init];
     self.name = name;
     return self;
 }
+
+-(instancetype)initWithName:(NSString *)creature specialPower:(NSString *)powers {
+    self = [self initWithName:creature];
+    self.specialPower = powers;
+    return self;
+}
+-(instancetype)initWithName:(NSString *)creature specialPower:(NSString *)powers creatureImage:(UIImage *)image {
+    self = [self initWithName:creature specialPower:powers];
+    self.creatureImage = image;
+    return self;
+}
+
 
 @end

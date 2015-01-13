@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
 @property (weak, nonatomic) IBOutlet UITextField *changeNameTextField;
+@property (weak, nonatomic) IBOutlet UIImageView *creatureImageView;
 
 @end
 
@@ -21,7 +22,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.nameLabel.text = self.creature.name;
+    self.creatureImageView.image = self.creature.creatureImage;
 }
+
+
 
 - (IBAction)onEditButtonTapped:(UIButton *)sender {
 

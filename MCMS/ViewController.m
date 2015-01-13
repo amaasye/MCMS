@@ -21,9 +21,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    MagicalCreature *goblin = [[MagicalCreature alloc]initWithCreature:@"Goblin"];
-    MagicalCreature *lochness = [[MagicalCreature alloc]initWithCreature:@"Loch Ness"];
-    MagicalCreature *godzilla = [[MagicalCreature alloc]initWithCreature:@"Godzilla"];
+    MagicalCreature *goblin = [[MagicalCreature alloc]initWithName:@"Goblin" specialPower:@"Teleport" creatureImage:[UIImage imageNamed:@"Goblin"]];
+    MagicalCreature *lochness = [[MagicalCreature alloc]initWithName:@"Loch Ness" specialPower:@"Swim real fast" creatureImage:[UIImage imageNamed:@"Lochness"]];
+    MagicalCreature *godzilla = [[MagicalCreature alloc]initWithName:@"Godzilla" specialPower:@"Super strength" creatureImage:[UIImage imageNamed:@"Godzilla"]];
     self.creatures = [NSMutableArray arrayWithObjects:goblin, lochness, godzilla, nil];
 
 
@@ -52,6 +52,7 @@
 
     MagicalCreature *creature = [self.creatures objectAtIndex: indexPath.row];
     cell.textLabel.text = creature.name;
+    cell.detailTextLabel.text = creature.specialPower;
 
 
     return cell;
@@ -61,7 +62,7 @@
 
 - (IBAction)onAddButtonTapped:(UIButton *)sender
 {
-    MagicalCreature *newCreature = [[MagicalCreature alloc] initWithCreature: self.creatureTextField.text];
+    MagicalCreature *newCreature = [[MagicalCreature alloc] initWithName: self.creatureTextField.text];
     [self.creatures addObject: newCreature];
 
     self.creatureTextField.text = @"";
