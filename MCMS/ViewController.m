@@ -27,7 +27,13 @@
     self.creatures = [NSMutableArray arrayWithObjects:goblin, lochness, godzilla, nil];
 
 
+    [self.tableView reloadData];
     
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.tableView reloadData];
 }
 
 #pragma mark - UITableView Data Source
@@ -69,9 +75,6 @@
     CreatureViewController *vc = segue.destinationViewController;
     MagicalCreature *creatureTapped = [self.creatures objectAtIndex:selectedIndexPath.row];
     vc.creature = creatureTapped;
-    vc.indexPath = selectedIndexPath;
-    vc.myCreatures = self.creatures;
-    
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "CreatureViewController.h"
+#import "MagicalCreature.h"
 
 @interface CreatureViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -26,20 +27,23 @@
 
     if (sender.isTouchInside) {
 
-        self.changeNameTextField.hidden = NO;
-        self.nameLabel.hidden = YES;
-        self.creature.name = self.changeNameTextField.text;
-        
-        [sender setTitle: @"Done" forState: UIControlStateNormal];
-    }   else {
-        self.changeNameTextField.hidden = YES;
-        self.nameLabel.hidden = NO;
-        self.nameLabel.text = self.creature.name;
-        [sender setTitle:@"Edit" forState:UIControlStateNormal];
-    }
- 
-    //[sender setTitle: @"Done" forState: UIControlStateNormal];
+        if ([sender.titleLabel.text isEqualToString: @"Edit"]) {
+
+            self.changeNameTextField.hidden = NO;
+            self.nameLabel.hidden = YES;
+            self.creature.name = self.changeNameTextField.text;
+
+            [sender setTitle: @"Done" forState: UIControlStateNormal];
+        }
+
+        if ([sender.titleLabel.text isEqualToString: @"Done"]) {
+
+            self.changeNameTextField.hidden = YES;
+            self.nameLabel.hidden = NO;
+            self.creature.name = self.changeNameTextField.text;
+            self.nameLabel.text = self.creature.name;
+
+   }
 }
-
-
+}
 @end
