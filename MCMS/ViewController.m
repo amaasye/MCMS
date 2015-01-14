@@ -104,11 +104,11 @@
     vc.creature = creatureTapped;
 }
 
--(void)prepareForSegueBattle:(UIStoryboardSegue *)segue sender:(id)sender {
+/*-(void)prepareForSegueBattle:(UIStoryboardSegue *)segue sender:(id)sender {
     BattleViewController *battleView = segue.destinationViewController;
-    
+    NSArray *allImages = [[NSArray arrayWithArray:
 }
-
+*/
 
 
 
