@@ -25,6 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.nameLabel.text = self.creature.name;
+    self.nameLabel.hidden = YES;
+    self.title = self.nameLabel.text;
     self.creatureImageView.image = self.creature.creatureImage;
 }
 
@@ -50,6 +52,7 @@
             self.changeNameTextField.hidden = NO;
             self.nameLabel.hidden = YES;
             self.creature.name = self.changeNameTextField.text;
+            self.title = self.creature.name;
 
             [sender setTitle: @"Done" forState: UIControlStateNormal];
         }
@@ -57,8 +60,9 @@
         if ([sender.titleLabel.text isEqualToString: @"Done"]) {
 
             self.changeNameTextField.hidden = YES;
-            self.nameLabel.hidden = NO;
+            self.nameLabel.hidden = YES;
             self.creature.name = self.changeNameTextField.text;
+            self.title = self.creature.name;
             self.nameLabel.text = self.creature.name;
 
    }

@@ -7,8 +7,10 @@
 //
 
 #import "BattleViewController.h"
+#import "MagicalCreature.h"
 
 @interface BattleViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *winnerImage;
 
 @end
 
@@ -16,7 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.winnerImage.image = self.creature.creatureImage;
+    self.title = self.creature.name;
+
 }
 
 
