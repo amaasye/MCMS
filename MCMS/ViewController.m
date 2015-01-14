@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "MagicalCreature.h"
 #import "CreatureViewController.h"
+#import "BattleViewController.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *creatureTextField;
@@ -21,12 +22,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    MagicalCreature *goblin = [[MagicalCreature alloc]initWithName:@"Goblin" specialPower:@"Teleport" creatureImage:[UIImage imageNamed:@"Goblin"]];
-    MagicalCreature *lochness = [[MagicalCreature alloc]initWithName:@"Loch Ness" specialPower:@"Swim real fast" creatureImage:[UIImage imageNamed:@"Lochness"]];
-    MagicalCreature *godzilla = [[MagicalCreature alloc]initWithName:@"Godzilla" specialPower:@"Super strength" creatureImage:[UIImage imageNamed:@"Godzilla"]];
-    self.creatures = [NSMutableArray arrayWithObjects:goblin, lochness, godzilla, nil];
 
 
+
+
+    NSMutableArray *goblinAcc = [NSMutableArray arrayWithObjects:@"Axe", @"Sword", @"Exploding Pumpkins", nil];
+    NSMutableArray *lochnessAcc = [NSMutableArray arrayWithObjects:@"Harpoon", @"Sheild", @"Explosives", nil];
+    NSMutableArray *godzillaAcc = [NSMutableArray arrayWithObjects:@"Gloves", @"Boots", @"Glasses", nil];
+
+
+    MagicalCreature *goblin = [[MagicalCreature alloc] initWithName: @"Goblin"
+                                                       specialPower: @"Teleport"
+                                                      creatureImage: [UIImage imageNamed: @"Goblin"]
+                                                        accessories: goblinAcc];
+
+
+
+   MagicalCreature *lochness = [[MagicalCreature alloc] initWithName: @"Loch Ness"
+                                                          specialPower: @"Swim real fast"
+                                                         creatureImage: [UIImage imageNamed: @"Lochness" ]
+                                                           accessories: lochnessAcc];
+    MagicalCreature *godzilla = [[MagicalCreature alloc] initWithName: @"Godzilla"
+                                                         specialPower: @"Super strength"
+                                                        creatureImage: [UIImage imageNamed: @"Godzilla"]
+                                                          accessories: godzillaAcc];
+
+    self.creatures = [NSMutableArray arrayWithObjects: goblin, lochness, godzilla, nil];
+
+    
+
+    
     [self.tableView reloadData];
     
 }
@@ -55,6 +80,7 @@
     cell.detailTextLabel.text = creature.specialPower;
 
 
+
     return cell;
 }
 
@@ -77,5 +103,15 @@
     MagicalCreature *creatureTapped = [self.creatures objectAtIndex:selectedIndexPath.row];
     vc.creature = creatureTapped;
 }
+
+-(void)prepareForSegueBattle:(UIStoryboardSegue *)segue sender:(id)sender {
+    BattleViewController *battleView = segue.destinationViewController;
+    
+}
+
+
+
+
+
 
 @end

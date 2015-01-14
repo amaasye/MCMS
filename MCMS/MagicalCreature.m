@@ -28,5 +28,15 @@
     return self;
 }
 
+- (instancetype) initWithName:(NSString *)creature specialPower:(NSString *)powers creatureImage:(UIImage *)image accessories:(NSMutableArray *)things{
+
+    self = [self initWithName: creature
+                 specialPower: powers
+                creatureImage: image];
+    self.accessories = things;
+
+    return self;
+}
+
 
 @end

@@ -16,6 +16,7 @@
 		B0537E701A65B3FA00DDA0C1 /* MCMSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0537E6F1A65B3FA00DDA0C1 /* MCMSTests.m */; };
 		B0537E7B1A65B44300DDA0C1 /* MagicalCreature.m in Sources */ = {isa = PBXBuildFile; fileRef = B0537E7A1A65B44300DDA0C1 /* MagicalCreature.m */; };
 		B0537E7E1A65BC2E00DDA0C1 /* CreatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0537E7D1A65BC2E00DDA0C1 /* CreatureViewController.m */; };
+		B0537E811A65F0F500DDA0C1 /* BattleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0537E801A65F0F500DDA0C1 /* BattleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		B0537E7A1A65B44300DDA0C1 /* MagicalCreature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalCreature.m; sourceTree = "<group>"; };
 		B0537E7C1A65BC2E00DDA0C1 /* CreatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatureViewController.h; sourceTree = "<group>"; };
 		B0537E7D1A65BC2E00DDA0C1 /* CreatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatureViewController.m; sourceTree = "<group>"; };
+		B0537E7F1A65F0F500DDA0C1 /* BattleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleViewController.h; sourceTree = "<group>"; };
+		B0537E801A65F0F500DDA0C1 /* BattleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 				B0537E581A65B3FA00DDA0C1 /* AppDelegate.m */,
 				B0537E5A1A65B3FA00DDA0C1 /* ViewController.h */,
 				B0537E5B1A65B3FA00DDA0C1 /* ViewController.m */,
+				B0537E7F1A65F0F500DDA0C1 /* BattleViewController.h */,
+				B0537E801A65F0F500DDA0C1 /* BattleViewController.m */,
 				B0537E7C1A65BC2E00DDA0C1 /* CreatureViewController.h */,
 				B0537E7D1A65BC2E00DDA0C1 /* CreatureViewController.m */,
 				B0537E5D1A65B3FA00DDA0C1 /* Main.storyboard */,
@@ -231,6 +236,7 @@
 			files = (
 				B0537E5C1A65B3FA00DDA0C1 /* ViewController.m in Sources */,
 				B0537E7B1A65B44300DDA0C1 /* MagicalCreature.m in Sources */,
+				B0537E811A65F0F500DDA0C1 /* BattleViewController.m in Sources */,
 				B0537E591A65B3FA00DDA0C1 /* AppDelegate.m in Sources */,
 				B0537E7E1A65BC2E00DDA0C1 /* CreatureViewController.m in Sources */,
 				B0537E561A65B3FA00DDA0C1 /* main.m in Sources */,

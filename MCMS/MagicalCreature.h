@@ -13,10 +13,13 @@
 @property NSString *name;
 @property NSString *specialPower;
 @property UIImage *creatureImage;
+@property NSMutableArray *accessories;
+
+
 -(instancetype)initWithName: (NSString *)creature;
 -(instancetype)initWithName:(NSString *)creature specialPower:(NSString *)powers;
 -(instancetype)initWithName:(NSString *)creature specialPower:(NSString *)powers creatureImage:(UIImage *)image;
-
+-(instancetype)initWithName:(NSString *)creature specialPower:(NSString *)powers creatureImage:(UIImage *)image  accessories:(NSMutableArray *)things;
 
 
 

@@ -9,11 +9,14 @@
 #import "CreatureViewController.h"
 #import "MagicalCreature.h"
 
-@interface CreatureViewController ()
+@interface CreatureViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
 @property (weak, nonatomic) IBOutlet UITextField *changeNameTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *creatureImageView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+
 
 @end
 
@@ -23,6 +26,17 @@
     [super viewDidLoad];
     self.nameLabel.text = self.creature.name;
     self.creatureImageView.image = self.creature.creatureImage;
+}
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.creature.accessories.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID" forIndexPath:indexPath];
+    cell.textLabel.text = [self.creature.accessories objectAtIndex:indexPath.row];
+    return cell;
 }
 
 
